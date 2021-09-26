@@ -6,6 +6,16 @@ IO Insure front end application.
 
 Everything you need to know to work on this project.
 
+Vue 2 + GraphQL (Apollo for client) + Vuetify + E2E + UnitTesting (Cypress) 
+
+Iam moving to Vue 3 with composition API + Typescript ( update it later )
+
+If you start learn Vue JS, try with vue 3 first, very interesting with composition API
+
+## Rule + Structure App
+
+Please check the docs folder in this projects (coding convention, best practices, styling testing..)
+
 #### Vue
 
 ```
