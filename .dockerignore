@@ -1,0 +1,13 @@
+# directories
+.history
+node_modules
+dist
+.vscode
+
+# local env files
+.env
+.env.local
+.env.*.local
+
+# misc files
+.gitignore

@@ -1,0 +1,33 @@
+$relative-sizes: (25%, 50%, 75%, 100%) !default;
+// You can extend with/height using command separated list
+$width-relative-sizes: append($relative-sizes, 'auto') !default;
+$height-relative-sizes: append($relative-sizes, 'auto') !default;
+
+// COLORS -----------------------------------------------------------------------------------------
+
+$color-primary: #00bed9;
+$color-secondary: #d3e4dc;
+$color-white: #fff;
+$color-light-grey: #f5f5f5;
+$color-accent: #00bed9;
+$color-light-accent: #00c8d9;
+$color-dark-grey: #6e6e6e;
+$color-dark-grey-1: #323232;
+$color-warning: #ffa200;
+$color-success: #00be5a;
+$color-twilight-blue: #ebfcff;
+$color-dove-gray: #707070;
+$color-error: #dc143c;
+$color-medium-gray: #dedede;
+$color-dark: #323232;
+$color-warning: #ffa200;
+$color-background: #fcfcfc;
+
+// /COLORS -----------------------------------------------------------------------------------------
+
+// TYPOGRAPHY
+
+$font-default: 'Roboto', sans-serif;
+$font-title: 'Space Grotesk', sans-serif;
+
+$input-font-size: 14px;

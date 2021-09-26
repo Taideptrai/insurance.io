@@ -1,0 +1,7 @@
+> 1%
+last 2 versions
+not ie <= 11
+not Chrome <= 57
+not Firefox <= 52
+not Safari <= 11
+not Edge <= 15

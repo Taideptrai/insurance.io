@@ -1,0 +1,93 @@
+{
+  "title": {
+    "app": "IO Insure"
+  },
+  "action": {
+    "save": "Save",
+    "close": "Close",
+    "ok": "Ok",
+    "yes": "@:label.yes",
+    "no": "@:label.no",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "send": "Send"
+  },
+  "label": {
+    "username": "User",
+    "full-name": "Full Name",
+    "email": "E-mail",
+    "company-name": "Company or Firm Name",
+    "password": "Password",
+    "repeat-password": "Repeat Password",
+    "yes": "Yes",
+    "no": "No",
+    "signout": "Sign Out",
+    "units": {
+      "length": {
+        "metric": {
+          "name": "meters | meter",
+          "short": "m"
+        },
+        "imperial": {
+          "name": "yards | yard | yards",
+          "short": "yds | yd | yds"
+        }
+      },
+      "time": {
+        "hour": "{time} hours | {time} hour | {time} hours",
+        "minutes": "{time} minutes | {time} minute | {time} minutes",
+        "seconds": "{time} seconds | {time} second | {time} seconds",
+        "seconds-short": "{time} secs | {time} sec | {time} secs"
+      }
+    }
+  },
+  "error": {
+    "project-not-found": "Project not found.",
+    "general": "An error occurred while processing the request",
+    "not-available": "Not Available",
+    "auth": {
+      "not-valid": "Your login credentials are no longer valid. Please sign in again.",
+      "validate-error": "There was an error while verifying credentials. Please sign in again."
+    },
+    "validation": {
+      "required": "Required field",
+      "email": "Invalid e-mail format",
+      "min-length": "Must contain at least 8 characters",
+      "password-match": "Repeated password does not match",
+      "invalid-positive-number": "The number must be positive number.",
+      "invalid-currency": "Please enter an valid currency.",
+      "invalid-percent": "The rage of percent must be 0 - 100.",
+      "duplicate-seller-email": "Duplicate with Seller email",
+      "maximun-character": "Maximum is {max} characters"
+    },
+    "field": {
+      "required": "{0} is required",
+      "numeric-only": "Numbers only",
+      "numeric-int-only": "Integer numbers only"
+    }
+  },
+  "menu": {
+    "home": "Home"
+  },
+  "date": {
+    "full": "MM/dd/YYYY",
+    "short": "MM/dd",
+    "localized": {
+      "short": "MM/dd/yyyy",
+      "full": "MMM d, yyyy"
+    },
+    "datetime": {
+      "short": "MM/dd/yyyy, h:mm a",
+      "full": "MMM d, yyyy, h:mm a"
+    },
+    "time": {
+      "short": "h:mm a",
+      "full": "h:mm a"
+    }
+  },
+  "question": {
+    "target": "Target",
+    "full-name": "Full Name",
+    "registered-number": "Registered Number"
+  }
+}

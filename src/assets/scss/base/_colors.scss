@@ -1,0 +1,79 @@
+@use '../abstracts/variables' as *;
+
+.color-primary {
+  color: $color-primary;
+}
+
+.bg-color-accent {
+  background-color: $color-accent;
+}
+
+.bg-color-dark-grey {
+  background-color: $color-dark-grey;
+}
+
+.bg-color-dark-grey-1 {
+  background-color: $color-dark-grey-1;
+}
+
+.bg-color-warning {
+  background-color: $color-warning;
+}
+
+.bg-color-success {
+  background-color: $color-success;
+}
+
+.color-btn-accent {
+  color: #fff;
+  background-color: $color-accent !important;
+  border-color: $color-accent !important;
+}
+
+.color-btn-dark-grey {
+  color: #fff;
+  background-color: $color-dark-grey !important;
+  border-color: $color-dark-grey !important;
+}
+
+.color-btn-dark-grey-1 {
+  color: #fff;
+  background-color: $color-dark-grey-1 !important;
+  border-color: $color-dark-grey-1 !important;
+}
+
+.color-btn-dark-grey-outline {
+  color: $color-dark-grey !important;
+  background-color: transparent;
+  border: 1px solid $color-dark-grey !important;
+}
+
+.color-btn-accent-outline {
+  color: $color-accent !important;
+  background-color: transparent;
+  border: 1px solid $color-accent !important;
+}
+
+.color-btn-success-outline {
+  color: $color-success !important;
+  background-color: transparent;
+  border: 1px solid $color-success !important;
+}
+
+.color-btn-warning-outline {
+  color: $color-warning !important;
+  background-color: transparent;
+  border: 1px solid $color-warning !important;
+}
+
+.color-btn-warning {
+  color: #fff;
+  background-color: $color-warning !important;
+  border-color: $color-warning !important;
+}
+
+.color-btn-success {
+  color: #fff;
+  background-color: $color-success !important;
+  border-color: $color-success !important;
+}

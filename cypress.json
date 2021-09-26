@@ -1,0 +1,4 @@
+{
+ "pluginsFile":"cypress/plugins/index.js",
+  "defaultCommandTimeout": 30000
+}

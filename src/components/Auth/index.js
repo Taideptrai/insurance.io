@@ -1,0 +1,7 @@
+export { default as LoginForm } from './Login/LoginForm.vue'
+export { default as ForgotPassWordForm } from './ResetPassword/ForgotPasswordForm.vue'
+export { default as CheckEmail } from './ResetPassword/CheckEmail.vue'
+export { default as Verify } from './ResetPassword/Verify.vue'
+export { default as CreatePasswordForm } from './ResetPassword/CreatePasswordForm.vue'
+export { default as SignUpForm } from './SignUp/SignUpForm.vue'
+export { default as ConfirmEmail } from './SignUp/ConfirmEmail.vue'

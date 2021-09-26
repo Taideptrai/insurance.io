@@ -1,0 +1,54 @@
+# Action that trigger jobs on every push to the develop branch
+
+name: Push on Develop Trigger
+
+# only run on the develop branch
+on:
+  push:
+    branches:
+      develop
+
+jobs:
+  push-docker-image-gcr:
+    runs-on: ubuntu-latest
+    name: Build/Push Docker Image to GCR
+    if: ${{ github.repository_owner == 'intellstartup'}}
+    env:
+      FOLDER_LOCATION: /opt/popai/code/io.insure-infra/dev
+      UPDATE_SERVER_SCRIPT_NAME: update_server.sh
+      IMAGE_TAG: gcr.io/isc-corporate/dev/io-insure-app:latest
+      IMAGE_TARGET: production
+      GCLOUD_MACHINE_NAME: io-insure-dev-usc1a
+      DEV_API_HOST: ${{ secrets.DEV_API_HOST }}
+      DEV_SECURE_HOST: ${{ secrets.DEV_SECURE_HOST }}
+      DEV_TENANT_ID: ${{ secrets.DEV_TENANT_ID }}
+      DEV_LOCALE: ${{ secrets.DEV_LOCALE }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup gcloud CLI
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          project_id: ${{ secrets.GC_PROJECT_ID_DEV }}
+          service_account_key: ${{ secrets.GC_SERVICE_ACCOUNT_DEV }}
+          export_default_credentials: true
+
+      - name: Configure gcloud to login on Docker
+        run: gcloud auth configure-docker -q
+
+      - name: Build docker image
+        run: |
+          docker build --build-arg API_HOST=$DEV_API_HOST --build-arg SECURE_HOST=$DEV_SECURE_HOST \
+          --build-arg TENANT_ID=$DEV_TENANT_ID --build-arg LOCALE=$DEV_LOCALE \
+          -t $IMAGE_TAG . --target $IMAGE_TARGET -f environment/Dockerfile
+
+      - name: Push image to GCR
+        run: docker push $IMAGE_TAG
+
+      - name: Update DEV machine
+        run: |
+          gcloud --quiet compute ssh $GCLOUD_MACHINE_NAME \
+          --project ${{ secrets.GC_PROJECT_ID_DEV }} \
+          --zone us-central1-a -- "cd $FOLDER_LOCATION ; sh $UPDATE_SERVER_SCRIPT_NAME"

@@ -1,0 +1,28 @@
+<svg id="tab-image-binder-default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="73.258" viewBox="0 0 80 73.258">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.138" y1="0.53" x2="0.851" y2="0.515" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.132" y1="0.489" x2="0.857" y2="0.504" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f5f5f5"/>
+      <stop offset="1" stop-color="#f5f5f5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_153" data-name="Group 153" opacity="0">
+    <rect id="Rectangle_100" data-name="Rectangle 100" width="51.611" height="14.275" rx="7.138" transform="translate(36.494 46.588) rotate(-135)" opacity="0.2" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_102" data-name="Rectangle 102" width="51.611" height="14.275" rx="7.138" transform="translate(69.906 46.588) rotate(-135)" opacity="0.2" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_101" data-name="Rectangle 101" width="51.611" height="14.275" rx="7.138" transform="translate(0 62.849) rotate(-45)" opacity="0.2" fill="url(#linear-gradient-3)"/>
+    <rect id="Rectangle_103" data-name="Rectangle 103" width="51.611" height="14.275" rx="7.138" transform="translate(33.411 62.849) rotate(-45)" opacity="0.2" fill="url(#linear-gradient-3)"/>
+  </g>
+  <g id="Group_365" data-name="Group 365" transform="translate(3.488 73.258) rotate(-90)">
+    <g id="Path_23" data-name="Path 23" fill="none" opacity="0.2">
+      <path d="M36.512,0A36.512,36.512,0,1,1,0,36.512,36.512,36.512,0,0,1,36.512,0Z" stroke="none"/>
+      <path d="M 36.51186752319336 14.0000114440918 C 24.09879684448242 14.0000114440918 14.0000114440918 24.09879684448242 14.0000114440918 36.51186752319336 C 14.0000114440918 48.9249382019043 24.09879684448242 59.02372360229492 36.51186752319336 59.02372360229492 C 48.9249382019043 59.02372360229492 59.02372360229492 48.9249382019043 59.02372360229492 36.51186752319336 C 59.02372360229492 24.09879684448242 48.9249382019043 14.0000114440918 36.51186752319336 14.0000114440918 M 36.51186752319336 7.62939453125e-06 C 56.67681884765625 7.62939453125e-06 73.02372741699219 16.34691619873047 73.02372741699219 36.51186752319336 C 73.02372741699219 56.67681884765625 56.67681884765625 73.02372741699219 36.51186752319336 73.02372741699219 C 16.34691619873047 73.02372741699219 7.62939453125e-06 56.67681884765625 7.62939453125e-06 36.51186752319336 C 7.62939453125e-06 16.34691619873047 16.34691619873047 7.62939453125e-06 36.51186752319336 7.62939453125e-06 Z" stroke="none" fill="#6e6e6e"/>
+    </g>
+    <rect id="Rectangle_107" data-name="Rectangle 107" width="73.024" height="73.024" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_106" data-name="Rectangle 106" width="36.786" height="36.786" fill="#f5f5f5"/>
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="7.138" cy="7.138" r="7.138" transform="translate(0 29.374)" fill="#dadada"/>
+  </g>
+</svg>

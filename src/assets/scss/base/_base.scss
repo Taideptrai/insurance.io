@@ -1,0 +1,168 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.td-none {
+  text-decoration: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.bg-project-project_setup {
+  background-image: url('~@/assets/img/card-image-setup.svg');
+}
+
+.bg-project-quote_pack {
+  background-image: url('~@/assets/img/card-image-quote.svg');
+}
+
+.bg-project-binder_pack {
+  background-image: url('~@/assets/img/card-image-binder.svg');
+}
+
+.bg-project-signing_and_completion {
+  background-image: url('~@/assets/img/card-image-sign_comp.svg');
+}
+
+.app-container {
+  margin: 0 40px;
+}
+
+@media (max-width: 599px) {
+  .app-container {
+    margin: 0 10px;
+  }
+}
+
+.v-input__slot {
+  border-radius: 8px !important;
+}
+
+.theme--light {
+  &.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {
+    border-color: #dedede;
+  }
+
+  &.v-input {
+    &:not(.v-input--is-disabled) input {
+      color: $color-dark-grey-1;
+    }
+
+    textarea {
+      color: $color-dark-grey-1 !important;
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0;
+    }
+  }
+
+  &.v-label {
+    color: $color-dark-grey-1 !important;
+
+    &--active {
+      font-weight: 500;
+    }
+  }
+}
+
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #f5f5f5 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #f5f5f5 0% 0% no-repeat padding-box;
+  }
+}
+
+.hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.toasted-container {
+  .toasted {
+    padding: 27px 32px !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    text-align: left !important;
+    border-radius: 8px !important;
+
+    &.success {
+      background-color: $color-success !important;
+    }
+
+    i {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}
+
+.divider {
+  border-color: $color-medium-gray !important;
+}
+
+.v-application {
+  .confirm-dialog {
+    padding: 8px;
+
+    header {
+      color: $color-dark-grey-1;
+      background-color: #fff !important;
+
+      .v-toolbar__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+
+    .v-card__text {
+      color: $color-dark-grey-1 !important;
+    }
+
+    .accent {
+      padding-right: 32px !important;
+      padding-left: 32px !important;
+    }
+  }
+}
+
+.treeview-content {
+  .v-treeview-node {
+    &__root {
+      min-height: auto !important;
+    }
+
+    &__checkbox {
+      font-size: 16px !important;
+    }
+  }
+}
+
+.fw-m {
+  font-weight: 500;
+}

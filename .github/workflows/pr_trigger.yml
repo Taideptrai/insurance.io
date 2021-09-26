@@ -1,0 +1,189 @@
+# Action that trigger jobs on every PR creation, commit
+
+name: PR Trigger
+
+on: pull_request
+jobs:
+  pr-unit-test:
+    runs-on: ubuntu-latest
+    name: Unit Tests and Code Coverage
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # we define the Node version to be used on the Workflow
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+
+      # IMPORTANT: cache to speed up the run time of the workflow
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Setup yarn
+        run: yarn --prefer-offline
+
+      - name: Run unit tests and code coverage
+        run: ./tests/test-unit-ci.sh
+
+  pr-e2e-test:
+    runs-on: ubuntu-latest
+    name: E2E Tests
+    env:
+      IMAGE_TAG: gcr.io/isc-corporate/dev/neo:latest
+
+    services:
+      postgres:
+        image: postgres:12.5
+        env:
+          POSTGRES_USER: popai
+          POSTGRES_PASSWORD: popai
+          POSTGRES_DB: popai
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup gcloud CLI
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          project_id: ${{ secrets.GC_PROJECT_ID_DEV }}
+          service_account_key: ${{ secrets.GC_SERVICE_ACCOUNT_DEV }}
+          export_default_credentials: true
+
+      - name: Configure gcloud to login on Docker
+        run: gcloud auth configure-docker -q
+
+      - name: Pull NEO image from GCR
+        run: docker pull $IMAGE_TAG
+
+      # start NEO service, we can't use services because we need to customize
+      - name: Start NEO
+        run: |
+          docker run --name neo --network-alias neo -p 8000:8000 \
+          --network ${{ job.services.postgres.network }} \
+          -e "DJANGO_DATABASE_URL=psql://popai:popai@postgres:5432/popai" \
+          -e "DJANGO_MJML_APPLICATION_ID=${{ secrets.MJML_APPLICATION_ID_DEV }}" \
+          -e "DJANGO_MJML_API_KEY=${{ secrets.MJML_API_KEY_DEV }}" \
+          -e "DJANGO_MEDIA_ROOT=/opt/popai/test_data/popai/media_root" \
+          -e "DJANGO_CONFIGURATION=Testing" -e GITHUB_ACTIONS=true \
+          -e "DJANGO_DB_LOG_LEVEL=DEBUG" -e "DJANGO_LOG_LEVEL=DEBUG" \
+          -e CI=true -d $IMAGE_TAG ./manage.py runserver 0:8000
+
+      # we need to run the migrations and load_fixtures on NEO
+      - name: Run NEO migrations
+        run: |
+          docker exec neo ./manage.py migrate
+
+      - name: Run NEO fixtures
+        run: |
+          docker exec neo ./manage.py fixtures load_fixtures
+
+      # we define the Node version to be used on the Workflow
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+
+      # IMPORTANT: cache to speed up the run time of the workflow
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Setup yarn
+        run: yarn --prefer-offline
+
+      - name: Run E2E tests
+        run: ./tests/test-e2e-ci.sh
+        env:
+          VUE_APP_API_HOST: localhost:8000
+          VUE_APP_SECURE_HOST: false
+          VUE_APP_TENANT_ID: 3313b787-0593-47fe-970c-e7d4249eb14e
+
+      - name: Dump docker logs on failure
+        if: failure()
+        uses: jwalton/gh-docker-logs@v1
+
+      - uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: e2e-screenshots
+          path: cypress/screenshots/
+
+  pr-lint-code:
+    runs-on: ubuntu-latest
+    name: Check lint status
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # we define the Node version to be used on the Workflow
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+
+      # IMPORTANT: cache to speed up the run time of the workflow
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Setup yarn
+        run: yarn --prefer-offline
+
+      - name: Run lint analysis
+        run: yarn lint --no-fix
+
+  # Auto assign review to juliovedovatto when the tests works
+  pr-auto-assign:
+    runs-on: ubuntu-latest
+    needs: [pr-unit-test, pr-e2e-test, pr-lint-code]
+    name: Auto Assign Review
+
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.1.2
+
+  # Auto assignee the PR to ThangNguyenSMD when the tests doesn't work
+  pr-auto-assignee:
+    runs-on: ubuntu-latest
+    needs: [pr-unit-test, pr-e2e-test]
+    name: Auto Assignee to Test Developer
+    if: ${{ failure() }}
+
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.1.2
+        with:
+          configuration-path: ".github/auto_assignee.yml"

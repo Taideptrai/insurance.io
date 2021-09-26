@@ -1,0 +1,628 @@
+[
+  {
+    "code": "general-questions",
+    "order": 1,
+    "title": "General Questions",
+    "chapters": [
+      {
+        "code": "chapter-general-questions",
+        "order": 1,
+        "title": "General Questions",
+        "menuTitle": "General Questions",
+        "warrantySections": [
+          {
+            "code": "target",
+            "order": 1,
+            "title": "Target",
+            "questions": [
+              {
+                "code": "full-name",
+                "order": 1,
+                "component": "String",
+                "title": "Full name"
+              },
+              {
+                "code": "registered-number",
+                "order": 2,
+                "component": "String",
+                "title": "Registered number"
+              },
+              {
+                "code": "registered-address",
+                "order": 3,
+                "component": "String",
+                "title": "Registered Address"
+              },
+              {
+                "code": "city",
+                "order": 4,
+                "component": "String",
+                "title": "City",
+                "properties": {
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "country",
+                "order": 5,
+                "component": "String",
+                "title": "Country",
+                "properties": {
+                  "dictionaryName": "Country",
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "zipcode",
+                "order": 6,
+                "component": "String",
+                "title": "Zipcode",
+                "properties": {
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "products-servicesector",
+                "order": 7,
+                "component": "String",
+                "title": "Products service/sector",
+                "properties": {
+                  "dictionaryName": "serviceSector"
+                }
+              },
+              {
+                "code": "overseas-selling-jurisdictions",
+                "order": 8,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Overseas Selling Jurisdictions"
+              },
+              {
+                "code": "where",
+                "order": 9,
+                "component": "String",
+                "title": "Where?",
+                "properties": {
+                  "classes": [
+                    "col-4",
+                    "pr-4"
+                  ],
+                  "conditions": [
+                    {
+                      "source": "general-questions.chapter-general-questions.target.overseas-selling-jurisdictions",
+                      "target": null,
+                      "value": true,
+                      "condition": "EQ"
+                    }
+                  ],
+                  "dictionaryName": "overseasCountry"
+                }
+              },
+              {
+                "code": "overseas-manufacturing-jurisdictions",
+                "order": 10,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Overseas Manufacturing Jurisdictions"
+              },
+              {
+                "code": "business-to-business-sales",
+                "order": 11,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Business to Business Sales"
+              },
+              {
+                "code": "business-to-consumer-sales",
+                "order": 12,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Business to Consumer Sales"
+              }
+            ]
+          },
+          {
+            "code": "seller",
+            "order": 2,
+            "title": "Seller",
+            "questions": [
+              {
+                "code": "the-seller-is-same-as",
+                "order": 1,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "The Seller is same as Target Group"
+              },
+              {
+                "code": "the-seller-is-the-insured",
+                "order": 2,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "The Seller is the Insured Under the Policy"
+              },
+              {
+                "code": "full-name",
+                "order": 3,
+                "component": "String",
+                "title": "Full name"
+              },
+              {
+                "code": "registered-number",
+                "order": 4,
+                "component": "String",
+                "title": "Registered number"
+              },
+              {
+                "code": "registered-address",
+                "order": 5,
+                "component": "String",
+                "title": "Registered Address"
+              },
+              {
+                "code": "city",
+                "order": 6,
+                "component": "String",
+                "title": "City",
+                "properties": {
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "country",
+                "order": 7,
+                "component": "String",
+                "title": "Country",
+                "properties": {
+                  "dictionaryName": "Country",
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "zipcode",
+                "order": 8,
+                "component": "String",
+                "title": "Zipcode",
+                "properties": {
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "sell-rollover",
+                "order": 9,
+                "component": "Percent",
+                "title": "Sell rollover (%)"
+              },
+              {
+                "code": "seller-counsel",
+                "order": 10,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Seller Counsel"
+              },
+              {
+                "code": "seller-accounting-financial-advisors",
+                "order": 11,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Seller Accounting / Financial Advisors"
+              }
+            ]
+          },
+          {
+            "code": "buyer",
+            "order": 3,
+            "title": "Buyer",
+            "questions": [
+              {
+                "code": "the-buyer-is-the-insured",
+                "order": 1,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "The Buyer is the Insured under the policy"
+              },
+              {
+                "code": "full-name",
+                "order": 2,
+                "component": "String",
+                "title": "Full name"
+              },
+              {
+                "code": "registered-number",
+                "order": 3,
+                "component": "String",
+                "title": "Registered number"
+              },
+              {
+                "code": "registered-address",
+                "order": 4,
+                "component": "String",
+                "title": "Registered Address"
+              },
+              {
+                "code": "city",
+                "order": 5,
+                "component": "String",
+                "title": "City",
+                "properties": {
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "country",
+                "order": 6,
+                "component": "String",
+                "title": "Country",
+                "properties": {
+                  "dictionaryName": "Country",
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "zipcode",
+                "order": 7,
+                "component": "String",
+                "title": "Zipcode",
+                "properties": {
+                  "classes": [
+                    "col-4"
+                  ]
+                }
+              },
+              {
+                "code": "buyer-counsel",
+                "order": 8,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Buyer Counsel"
+              },
+              {
+                "code": "buyer-accounting-financial-advisors",
+                "order": 9,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Buyer Accounting / Financial Advisors"
+              }
+            ]
+          },
+          {
+            "code": "transaction-type",
+            "order": 4,
+            "title": "Transaction type",
+            "questions": [
+              {
+                "code": "shares",
+                "order": 1,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Shares"
+              },
+              {
+                "code": "how-much-shares-being-acquired",
+                "order": 2,
+                "component": "Percent",
+                "title": "How much shares being acquired? (%)"
+              },
+              {
+                "code": "assets",
+                "order": 3,
+                "component": "Radio",
+                "properties": {
+                  "dictionaryName": "switcher"
+                },
+                "title": "Assets"
+              }
+            ]
+          },
+          {
+            "code": "transaction-dates",
+            "order": 5,
+            "title": "Transaction dates",
+            "questions": [
+              {
+                "code": "estimated-signing-dates",
+                "order": 1,
+                "component": "Date",
+                "title": "Estimated signing dates"
+              },
+              {
+                "code": "estimated-completion-date",
+                "order": 2,
+                "component": "Date",
+                "title": "Estimated completion date"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "general-due-diligence",
+    "order": 2,
+    "title": "General Due Diligence",
+    "chapters": [
+      {
+        "code": "chapter-general-due-diligence",
+        "order": 1,
+        "title": "General Due Diligence",
+        "menuTitle": "General Due Diligence",
+        "warrantySections": [
+          {
+            "code": "general-due-diligence-target",
+            "order": 1,
+            "title": "Target",
+            "questions": [
+              {
+                "code": "ranking-of-rationale-for-acquiring",
+                "order": 1,
+                "component": "GroupQuestion",
+                "title": "Ranking of rationale for acquiring the target",
+                "properties": {
+                  "helperText": {
+                    "value": "(1 highest, 7 lowest)"
+                  }
+                },
+                "questions": [
+                  {
+                    "code": "highest",
+                    "order": 1,
+                    "component": "String",
+                    "title": "1. Highest",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  },
+                  {
+                    "code": "higher",
+                    "order": 2,
+                    "component": "String",
+                    "title": "2. Higher",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  },
+                  {
+                    "code": "high",
+                    "order": 3,
+                    "component": "String",
+                    "title": "3. High",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  },
+                  {
+                    "code": "medium",
+                    "order": 4,
+                    "component": "String",
+                    "title": "4. Medium",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  },
+                  {
+                    "code": "low",
+                    "order": 5,
+                    "component": "String",
+                    "title": "5. Low",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  },
+                  {
+                    "code": "lower",
+                    "order": 6,
+                    "component": "String",
+                    "title": "6. Lower",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  },
+                  {
+                    "code": "lowest",
+                    "order": 7,
+                    "component": "String",
+                    "title": "7. Lowest",
+                    "properties": {
+                      "dictionaryName": "rankingOfRationale"
+                    }
+                  }
+                ]
+              },
+              {
+                "code": "does-the-buyer-operate-businesses",
+                "order": 2,
+                "component": "Radio",
+                "title": "Does the Buyer operate businesses similar to that of the Target Company?",
+                "properties": {
+                  "dictionaryName": "yes-no-questions"
+                }
+              },
+              {
+                "code": "how-do-you-rate-the",
+                "order": 3,
+                "component": "Rating",
+                "title": "How do you rate the buyer’s experience in the sector(s) in which the Target Group operates?",
+                "properties": {
+                  "helperText": {
+                    "id": "ratingHelperText"
+                  }
+                }
+              },
+              {
+                "code": "have-key-risk-issues-been-target",
+                "order": 4,
+                "component": "KeyLegalIssuesQuestion",
+                "properties": {
+                  "classes": [
+                    "switcher"
+                  ]
+                },
+                "booleanTitle": "Have key risk issues been identified?",
+                "textAreaTitle": "What are the specific key risks issues identified and how have you gained comfort with these issues?",
+                "booleanProperties": {
+                  "dictionaryName": "yes-no-questions"
+                }
+              },
+              {
+                "code": "how-do-you-rate-the-following",
+                "order": 5,
+                "component": "GroupQuestion",
+                "title": "How do you rate the following risks in the target business?",
+                "properties": {
+                  "helperText": {
+                    "value": "(1 being the lowest and 5 being the highest)"
+                  }
+                },
+                "questions": [
+                  {
+                    "code": "comercial",
+                    "order": 1,
+                    "component": "Rating",
+                    "title": "Comercial",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  },
+                  {
+                    "code": "operational",
+                    "order": 2,
+                    "component": "Rating",
+                    "title": "Operational",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  },
+                  {
+                    "code": "financial",
+                    "order": 3,
+                    "component": "Rating",
+                    "title": "Financial",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  },
+                  {
+                    "code": "tax",
+                    "order": 4,
+                    "component": "Rating",
+                    "title": "Tax",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  },
+                  {
+                    "code": "legal",
+                    "order": 5,
+                    "component": "Rating",
+                    "title": "Legal",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  },
+                  {
+                    "code": "employees",
+                    "order": 6,
+                    "component": "Rating",
+                    "title": "Employees",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  },
+                  {
+                    "code": "material-contracts",
+                    "order": 7,
+                    "component": "Rating",
+                    "title": "Material Contracts",
+                    "properties": {
+                      "helperText": {
+                        "id": "ratingHelperText"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "code": "have-key-risk-issues-been",
+                "order": 6,
+                "component": "KeyLegalIssuesQuestion",
+                "properties": {
+                  "classes": [
+                    "switcher"
+                  ]
+                },
+                "ratingTitle": "How do you rate the completeness and thoroughness of the Buyer’s Due Diligence?",
+                "booleanTitle": "Have key risk issues been identified?",
+                "ratingProperties": {
+                  "helperText": {
+                    "id": "ratingHelperText"
+                  }
+                },
+                "booleanProperties": {
+                  "dictionaryName": "yes-no-questions"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "review-and-sign",
+    "order": 5,
+    "title": "Review And Sign",
+    "chapters": []
+  }
+]

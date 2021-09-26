@@ -1,0 +1,28 @@
+<svg id="tab-image-quote-default" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="73.258" viewBox="0 0 80 73.258">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.138" y1="0.53" x2="0.851" y2="0.515" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.132" y1="0.489" x2="0.857" y2="0.504" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-5" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f5f5f5"/>
+      <stop offset="1" stop-color="#f5f5f5" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_153" data-name="Group 153" transform="translate(0 0)" opacity="0">
+    <rect id="Rectangle_100" data-name="Rectangle 100" width="51.611" height="14.275" rx="7.138" transform="translate(36.494 46.588) rotate(-135)" opacity="0.2" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_102" data-name="Rectangle 102" width="51.611" height="14.275" rx="7.138" transform="translate(69.906 46.588) rotate(-135)" opacity="0.2" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_101" data-name="Rectangle 101" width="51.611" height="14.275" rx="7.138" transform="translate(0 62.849) rotate(-45)" opacity="0.2" fill="url(#linear-gradient-3)"/>
+    <rect id="Rectangle_103" data-name="Rectangle 103" width="51.611" height="14.275" rx="7.138" transform="translate(33.411 62.849) rotate(-45)" opacity="0.2" fill="url(#linear-gradient-3)"/>
+  </g>
+  <g id="Group_364" data-name="Group 364" transform="translate(3.488 0.234)">
+    <g id="Path_23" data-name="Path 23" fill="none" opacity="0.2">
+      <path d="M36.512,73.024A36.512,36.512,0,1,1,73.024,36.512,36.512,36.512,0,0,1,36.512,73.024Z" stroke="none"/>
+      <path d="M 36.51186752319336 59.02372360229492 C 48.9249382019043 59.02372360229492 59.02372360229492 48.9249382019043 59.02372360229492 36.51186752319336 C 59.02372360229492 24.09879684448242 48.9249382019043 14.00001049041748 36.51186752319336 14.00001049041748 C 24.09879684448242 14.00001049041748 14.00001049041748 24.09879684448242 14.00001049041748 36.51186752319336 C 14.00001049041748 48.9249382019043 24.09879684448242 59.02372360229492 36.51186752319336 59.02372360229492 M 36.51186752319336 73.02372741699219 C 16.34691429138184 73.02372741699219 1.038033587974496e-05 56.67681884765625 1.038033587974496e-05 36.51186752319336 C 1.038033587974496e-05 16.34691429138184 16.34691429138184 1.038033587974496e-05 36.51186752319336 1.038033587974496e-05 C 56.67681884765625 1.038033587974496e-05 73.02372741699219 16.34691429138184 73.02372741699219 36.51186752319336 C 73.02372741699219 56.67681884765625 56.67681884765625 73.02372741699219 36.51186752319336 73.02372741699219 Z" stroke="none" fill="#6e6e6e"/>
+    </g>
+    <rect id="Rectangle_107" data-name="Rectangle 107" width="73.024" height="73.024" transform="translate(0)" fill="url(#linear-gradient-5)"/>
+    <rect id="Rectangle_106" data-name="Rectangle 106" width="36.786" height="36.786" transform="translate(36.237 36.237)" fill="#f5f5f5"/>
+    <circle id="Ellipse_35" data-name="Ellipse 35" cx="7.138" cy="7.138" r="7.138" transform="translate(58.748 29.374)" fill="#dadada"/>
+  </g>
+</svg>

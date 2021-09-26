@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="846" height="820" viewBox="0 0 846 820">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.489" y1="0.351" x2="0.5" y2="0.82" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.502"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path id="signup-background-image" d="M4745.5,3625.5v-819h5.381c64.971,5.233,118.961,54.651,132.4,121.349,11.107,55.079-16.514,114.455-69.3,148.947-72.814,47.587-73.609,103.025-1.329,148.416,48.217,30.286,72.541,73.615,73.031,129.282.783,90.336,1.164,180.678.287,271.006Zm186.917-486.318c-.122-179.8,146.509-326.553,327.624-327.889C5433.685,2810,5580.9,2947.024,5590.5,3115.135v36.981c-9.274,176.686-146.858,313.3-321.527,314.614-.919.007-1.813.011-2.731.011C5079.313,3466.729,4932.542,3323.009,4932.417,3139.182Z" transform="translate(-4745 -2806)" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+</svg>

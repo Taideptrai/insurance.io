@@ -1,0 +1,14 @@
+const { VUE_APP_TEST_API_PASSWORD, VUE_APP_TEST_API_USER } = process.env
+
+const AUTH_COOKIES = {
+  ACCESS_TOKEN: 'accessToken',
+  EXPIRES_AT: 'expiresAt',
+  REFRESH_TOKEN: 'refreshToken'
+}
+
+const REFRESH_TOKENS_INTERVAL = 30 * 60 // time in seconds
+
+const TEST_API_USER = VUE_APP_TEST_API_USER || ''
+const TEST_API_PASSWORD = VUE_APP_TEST_API_PASSWORD || ''
+
+export { AUTH_COOKIES, REFRESH_TOKENS_INTERVAL, TEST_API_PASSWORD, TEST_API_USER }

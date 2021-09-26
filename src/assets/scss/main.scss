@@ -1,0 +1,29 @@
+// main.scss
+@import
+  'base/reset',
+  'base/base',
+  'base/typography',
+  'base/colors',
+  'base/misc';
+
+// in this example, we are importing material design icon pack
+@import
+  'vendor/material-icons';
+// import awesomes icon pack
+@import 'vendor/awesomes-icons';
+// import vuetify dialog
+@import 'vendor/vuetify-dialog';
+@import 'base/exports';
+
+// custom border of text-field
+.v-text-field--outlined fieldset {
+  border-color: #dedede !important;
+}
+
+.v-text-field--outlined.v-input--is-focused fieldset {
+  border-color: $color-primary !important;
+}
+
+.v-text-field--outlined.error--text fieldset {
+  border-color: $color-error !important;
+}

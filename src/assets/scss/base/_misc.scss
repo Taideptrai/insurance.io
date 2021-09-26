@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.disabled,
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+// SIZING -----------------------------------------------------------------------------------------
+@each $size in $width-relative-sizes {
+  .w-#{strip-unit($size)} {
+    width: if(type-of($size) == 'string', unquote($size), $size) !important;
+  }
+}
+
+@each $size in $height-relative-sizes {
+  .h-#{strip-unit($size)} {
+    height: if(type-of($size) == 'string', unquote($size), $size) !important;
+  }
+}
